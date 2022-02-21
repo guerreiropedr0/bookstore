@@ -5,7 +5,7 @@ const BookSection = () => {
   const booksState = useSelector((state) => state.bookReducer);
   const dispatch = useDispatch();
 
-  const help = (id) => {
+  const remove = (id) => {
     dispatch(removeBook(id));
   };
 
@@ -19,7 +19,7 @@ const BookSection = () => {
             <h4 className="book-author">{books.book.author}</h4>
             <ul className="book-events">
               <button type="button">Comments</button>
-              <button type="button" onClick={(e) => help(e.target.id)} id={books.book.id}>
+              <button type="button" onClick={(e) => remove(e.target.id)} id={books.book.id}>
                 Remove
               </button>
               <button type="button">Edit</button>
