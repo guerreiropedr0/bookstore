@@ -1,17 +1,46 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
 import store from '../redux/configureStore';
 
 const Form = () => {
+  const [form, setForm] = useState({
+    inputTitle: '',
+    inputAuthor: '',
+    selected: '',
+  });
+
+  const handleTitleChange = (e) => {
+    setForm({
+      ...form,
+      inputTitle: e.target.value,
+    });
+  };
+
+  const handleAuthorChange = (e) => {
+    setForm({
+      ...form,
+      inputAuthor: e.target.value,
+    });
+  };
+
+  const handleSelectChange = (e) => {
+    const index = e.target.selectedIndex;
+    setForm({
+      ...form,
+      selected: e.target[index].innerHTML,
+    });
+  };
+
   const dispatch = useDispatch();
 
   const submitBookToStore = (e) => {
     e.preventDefault();
     const newBook = {
       id: store.getState().bookReducer.length,
-      title: e.target[0].value,
-      author: e.target[1].value,
-      category: e.target[2].value,
+      title: form.inputTitle,
+      author: form.inputAuthor,
+      category: form.selected,
     };
 
     dispatch(addBook(newBook));
@@ -21,10 +50,30 @@ const Form = () => {
       <label htmlFor="book">
         ADD NEW BOOK
         <br />
-        <input type="text" id="book" placeholder="Book title" required />
+        <input
+          type="text"
+          id="book"
+          placeholder="Book title"
+          value={form.inputTitle}
+          onChange={handleTitleChange}
+          required
+        />
       </label>
-      <input type="text" id="author" placeholder="Book author" required />
-      <select defaultValue="" name="categories" id="categories" required>
+      <input
+        type="text"
+        id="author"
+        placeholder="Book author"
+        value={form.inputAuthor}
+        onChange={handleAuthorChange}
+        required
+      />
+      <select
+        value={form.selected}
+        onChange={handleSelectChange}
+        name="categories"
+        id="categories"
+        required
+      >
         <option value="" disabled>
           Category
         </option>
