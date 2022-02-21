@@ -73,10 +73,6 @@
   cursor: pointer;
 }
 
-.navigation-links *:hover {
-  color: var(--accent-color);
-}
-
 .user-icon {
   justify-self: flex-end;
   cursor: pointer;
@@ -88,6 +84,18 @@
 
 .book-form * {
   margin: 0 1rem;
+}
+
+.book-events * {
+  cursor: pointer;
+}
+
+.book-update * {
+  margin: 0.3rem 0;
+}
+
+.navigation-links *:hover {
+  color: var(--accent-color);
 }
 
 #book {
@@ -141,10 +149,6 @@
   color: var(--secondary-color);
 }
 
-.book-events * {
-  cursor: pointer;
-}
-
 .book-events li:nth-child(2) {
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
@@ -159,8 +163,4 @@
 
 .book-update {
   justify-self: end;
-}
-
-.book-update * {
-  margin: 0.3rem 0;
 }

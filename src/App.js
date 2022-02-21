@@ -12,12 +12,12 @@ function App() {
         <Route
           exact
           path="/"
-          element={
+          element={(
             <>
               <BookSection />
               <Form />
             </>
-          }
+          )}
         />
         <Route path="/categories" element={<Categories />} />
       </Routes>
