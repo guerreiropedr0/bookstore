@@ -7,7 +7,8 @@ const Form = () => {
   const [form, setForm] = useState({
     inputTitle: '',
     inputAuthor: '',
-    selected: '',
+    selectedValue: 'none',
+    selectedText: '',
   });
 
   const handleTitleChange = (e) => {
@@ -28,7 +29,8 @@ const Form = () => {
     const index = e.target.selectedIndex;
     setForm({
       ...form,
-      selected: e.target[index].innerHTML,
+      selectedValue: e.target.value,
+      selectedText: e.target[index].innerHTML,
     });
   };
 
@@ -40,7 +42,7 @@ const Form = () => {
       id: store.getState().bookReducer.length,
       title: form.inputTitle,
       author: form.inputAuthor,
-      category: form.selected,
+      category: form.selectedText,
     };
 
     dispatch(addBook(newBook));
@@ -68,13 +70,13 @@ const Form = () => {
         required
       />
       <select
-        value={form.selected}
+        value={form.selectedValue}
         onChange={handleSelectChange}
         name="categories"
         id="categories"
         required
       >
-        <option value="" disabled>
+        <option value="none" disabled>
           Category
         </option>
         <option value="education">Education and Teaching</option>

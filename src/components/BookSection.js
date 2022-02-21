@@ -12,7 +12,7 @@ const BookSection = () => {
   return (
     <section>
       {booksState.map((books) => (
-        <div key={books.book.title} className="book-card">
+        <div key={`Book ${books.book.id}`} className="book-card">
           <div className="book-info">
             <h3 className="book-category">{books.book.category}</h3>
             <h2 className="book-title">{books.book.title}</h2>
