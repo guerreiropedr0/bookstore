@@ -17,6 +17,7 @@
   color: inherit;
   border: none;
   outline: none;
+  background-color: transparent;
 }
 
 .active {
@@ -82,10 +83,6 @@
   margin: 2rem;
 }
 
-.book-form * {
-  margin: 0 1rem;
-}
-
 .book-events * {
   cursor: pointer;
 }
@@ -98,20 +95,23 @@
   color: var(--accent-color);
 }
 
-#book {
+input {
   background-color: var(--bg-light);
   padding: 0.6rem;
-  width: 50vw;
-  margin-top: 1rem;
+  margin: 1rem 0.5rem 0 0;
+  width: 25vw;
+  border-radius: 0.7rem;
 }
 
-#book::placeholder {
+input::placeholder {
   color: #d4d4d4;
 }
 
 #categories {
   background-color: var(--bg-light);
   padding: 0.6rem;
+  margin-right: 0.5rem;
+  border-radius: 0.7rem;
 }
 
 .book-card {
