@@ -1,0 +1,166 @@
+:root {
+  --bg-dark: #121620;
+  --bg-light: #1c212e;
+  --primary-color: #fff;
+  --accent-color: #0290ff;
+  --secondary-color: #4386bf;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+  border: none;
+  outline: none;
+}
+
+.active {
+  color: var(--secondary-color);
+}
+
+.btn {
+  border-radius: 3px;
+  background-color: var(--accent-color);
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+}
+
+.btn:hover {
+  background-color: #0080e2;
+}
+
+.btn:active {
+  background-color: #0071c7;
+}
+
+#root {
+  height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  border-radius: 4px;
+  background-color: #2a2d35;
+}
+
+.navigation-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-light);
+  height: 5rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.navigation-bar * {
+  margin: 0 1rem;
+}
+
+.title {
+  color: var(--accent-color);
+}
+
+.navigation-links {
+  display: flex;
+  cursor: pointer;
+}
+
+.navigation-links *:hover {
+  color: var(--accent-color);
+}
+
+.user-icon {
+  justify-self: flex-end;
+  cursor: pointer;
+}
+
+.book-form {
+  margin: 2rem;
+}
+
+.book-form * {
+  margin: 0 1rem;
+}
+
+#book {
+  background-color: var(--bg-light);
+  padding: 0.6rem;
+  width: 50vw;
+  margin-top: 1rem;
+}
+
+#book::placeholder {
+  color: #d4d4d4;
+}
+
+#categories {
+  background-color: var(--bg-light);
+  padding: 0.6rem;
+}
+
+.book-card {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  background-color: #000;
+  padding: 1rem;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.book-category {
+  opacity: 0.5;
+  font-weight: normal;
+}
+
+.book-title {
+  margin: 0.3rem 0;
+}
+
+.book-author {
+  color: var(--secondary-color);
+  font-weight: normal;
+}
+
+.book-events {
+  display: flex;
+  margin-top: 1rem;
+  width: 12.5rem;
+  justify-content: space-between;
+  color: var(--secondary-color);
+}
+
+.book-events * {
+  cursor: pointer;
+}
+
+.book-events li:nth-child(2) {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  padding: 0 0.7rem;
+}
+
+.book-completion {
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+
+.book-update {
+  justify-self: end;
+}
+
+.book-update * {
+  margin: 0.3rem 0;
+}
