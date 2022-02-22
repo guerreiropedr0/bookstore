@@ -1,9 +1,8 @@
 :root {
-  --bg-dark: #121620;
-  --bg-light: #1c212e;
-  --primary-color: #fff;
-  --accent-color: #0290ff;
-  --secondary-color: #4386bf;
+  --lightest-color: #252422;
+  --light-color: #ccc5b9;
+  --color: #fffcf2;
+  --dark-color: #eb5e28;
 }
 
 *,
@@ -21,41 +20,42 @@
 }
 
 .active {
-  color: var(--secondary-color);
+  color: var(--dark-color);
 }
 
 .btn {
   border-radius: 3px;
-  background-color: var(--accent-color);
+  background-color: var(--dark-color);
+  color: var(--color);
   padding: 0.801rem 1.188rem 0.886rem 1.375rem;
 }
 
 .btn:hover {
-  background-color: #0080e2;
+  background-color: #e25b25;
 }
 
 .btn:active {
-  background-color: #0071c7;
+  background-color: #d85723;
 }
 
 #root {
   height: 100vh;
-  background-color: var(--bg-dark);
-  color: var(--primary-color);
+  background-color: var(--lightest-color);
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #5c4b50;
 }
 
 .app {
   border-radius: 4px;
-  background-color: #2a2d35;
+  background-color: var(--color);
 }
 
 .navigation-bar {
   display: flex;
   align-items: center;
-  background-color: var(--bg-light);
+  background-color: var(--color);
   height: 5rem;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -66,7 +66,7 @@
 }
 
 .title {
-  color: var(--accent-color);
+  color: var(--dark-color);
 }
 
 .navigation-links {
@@ -83,32 +83,29 @@
   margin: 2rem;
 }
 
-.book-events * {
-  cursor: pointer;
-}
-
 .book-update * {
   margin: 0.3rem 0;
 }
 
+.book-events *:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .navigation-links *:hover {
-  color: var(--accent-color);
+  color: var(--dark-color);
 }
 
 input {
-  background-color: var(--bg-light);
+  background-color: var(--light-color);
   padding: 0.6rem;
   margin: 1rem 0.5rem 0 0;
   width: 25vw;
   border-radius: 0.7rem;
 }
 
-input::placeholder {
-  color: #d4d4d4;
-}
-
 #categories {
-  background-color: var(--bg-light);
+  background-color: var(--light-color);
   padding: 0.6rem;
   margin-right: 0.5rem;
   border-radius: 0.7rem;
@@ -122,8 +119,13 @@ input::placeholder {
 .book-card {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: #000;
+  background-color: var(--light-color);
   padding: 1rem;
+  border: 2px solid #5c4b50;
+}
+
+.book-card:not(:first-child) {
+  border-top: none;
 }
 
 .book-info {
@@ -142,7 +144,7 @@ input::placeholder {
 }
 
 .book-author {
-  color: var(--secondary-color);
+  /* color:  */
   font-weight: normal;
 }
 
@@ -151,7 +153,8 @@ input::placeholder {
   margin-top: 1rem;
   width: 12.5rem;
   justify-content: space-between;
-  color: var(--secondary-color);
+
+  /* color:  */
 }
 
 .book-events li:nth-child(2) {
