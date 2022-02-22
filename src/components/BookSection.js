@@ -2,7 +2,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 
 const BookSection = () => {
-  const booksState = useSelector((state) => state.bookReducer);
+  const booksState = useSelector((state) => state.bookReducer.books);
+  const booksArray = Object.values(booksState);
   const dispatch = useDispatch();
 
   const remove = (id) => {
@@ -10,16 +11,20 @@ const BookSection = () => {
   };
 
   return (
-    <section>
-      {booksState.map((books) => (
-        <div key={`Book ${books.book.id}`} className="book-card">
+    <section className="books-section">
+      {booksArray.map((books, index) => (
+        <div key={Object.keys(booksState)[index]} className="book-card">
           <div className="book-info">
-            <h3 className="book-category">{books.book.category}</h3>
-            <h2 className="book-title">{books.book.title}</h2>
-            <h4 className="book-author">{books.book.author}</h4>
+            <h3 className="book-category">{books[0].category}</h3>
+            <h2 className="book-title">{books[0].title}</h2>
+            <h4 className="book-author">Author name</h4>
             <ul className="book-events">
               <button type="button">Comments</button>
-              <button type="button" onClick={(e) => remove(e.target.id)} id={books.book.id}>
+              <button
+                type="button"
+                onClick={(e) => remove(e.target.id)}
+                id={Object.keys(booksState)[index]}
+              >
                 Remove
               </button>
               <button type="button">Edit</button>
