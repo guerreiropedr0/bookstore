@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
-import store from '../redux/configureStore';
+import { postBook } from '../redux/books/books';
+import generateRandomId from './helper';
 
 const Form = () => {
+  const dispatch = useDispatch();
+
   const [form, setForm] = useState({
     inputTitle: '',
     inputAuthor: '',
@@ -34,18 +36,17 @@ const Form = () => {
     });
   };
 
-  const dispatch = useDispatch();
-
   const submitBookToStore = (e) => {
     e.preventDefault();
     const newBook = {
-      id: store.getState().bookReducer.length,
+      item_id: generateRandomId(),
       title: form.inputTitle,
-      author: form.inputAuthor,
+      /* author: form.inputAuthor,
+      (since the API doesn't allow other keys, I had to comment this for future use)
+      */
       category: form.selectedText,
     };
-
-    dispatch(addBook(newBook));
+    dispatch(postBook(newBook));
   };
   return (
     <form onSubmit={(e) => submitBookToStore(e)} className="book-form" required>

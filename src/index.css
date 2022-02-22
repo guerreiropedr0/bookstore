@@ -114,9 +114,14 @@ input::placeholder {
   border-radius: 0.7rem;
 }
 
+.books-section {
+  height: 400px;
+  overflow-y: scroll;
+}
+
 .book-card {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
   background-color: #000;
   padding: 1rem;
 }
