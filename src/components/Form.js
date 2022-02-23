@@ -38,10 +38,10 @@ const Form = () => {
     dispatch(postBook(newBook));
   };
   return (
-    <form onSubmit={(e) => submitBookToStore(e)} className="book-form" required>
+    <div className="book-form">
       <hr className="separator" />
-      <label htmlFor="book">
-        ADD NEW BOOK
+      <h3 className="add-book">ADD NEW BOOK</h3>
+      <form onSubmit={(e) => submitBookToStore(e)} className="form" required>
         <br />
         <input
           type="text"
@@ -51,28 +51,28 @@ const Form = () => {
           onChange={handleTitleChange}
           required
         />
-      </label>
-      <select
-        value={form.selectedValue}
-        onChange={handleSelectChange}
-        name="categories"
-        id="categories"
-        required
-      >
-        <option value="none" disabled>
-          Category
-        </option>
-        <option value="education">Education and Teaching</option>
-        <option value="history">History</option>
-        <option value="entertainment">Humor and Entertainment</option>
-        <option value="mystery">Mystery, Thriller and Suspense</option>
-        <option value="romance">Romance</option>
-        <option value="fantasy">Science Fiction and Fantasy</option>
-      </select>
-      <button className="btn" type="submit">
-        ADD BOOK
-      </button>
-    </form>
+        <select
+          value={form.selectedValue}
+          onChange={handleSelectChange}
+          name="categories"
+          id="categories"
+          required
+        >
+          <option value="none" disabled>
+            Category
+          </option>
+          <option value="education">Education and Teaching</option>
+          <option value="history">History</option>
+          <option value="entertainment">Humor and Entertainment</option>
+          <option value="mystery">Mystery, Thriller and Suspense</option>
+          <option value="romance">Romance</option>
+          <option value="fantasy">Science Fiction and Fantasy</option>
+        </select>
+        <button className="btn-2" type="submit">
+          ADD BOOK
+        </button>
+      </form>
+    </div>
   );
 };
 export default Form;
