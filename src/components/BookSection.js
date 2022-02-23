@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
+import progressBar from '../assets/progress.png';
 
 const BookSection = () => {
   const booksState = useSelector((state) => state.bookReducer.books);
@@ -31,15 +32,17 @@ const BookSection = () => {
             </ul>
           </div>
           <div className="book-completion">
-            <h2>
-              64%
+            <img className="book-image" src={progressBar} alt="Progress bar" />
+            <div className="book-stats">
+              <span className="book-progress">64%</span>
               <br />
-              <span>Completed</span>
-            </h2>
+              <span className="book-completed">Completed</span>
+            </div>
           </div>
+          <div className="line" />
           <div className="book-update">
-            <h4>CURRENT CHAPTER</h4>
-            <p>Chapter 17</p>
+            <h4 className="book-current">CURRENT CHAPTER</h4>
+            <p className="book-chapter">Chapter 17</p>
             <button className="btn" type="button">
               UPDATE PROGRESS
             </button>
