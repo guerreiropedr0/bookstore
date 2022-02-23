@@ -8,7 +8,6 @@ const Form = () => {
 
   const [form, setForm] = useState({
     inputTitle: '',
-    inputAuthor: '',
     selectedValue: 'none',
     selectedText: '',
   });
@@ -17,13 +16,6 @@ const Form = () => {
     setForm({
       ...form,
       inputTitle: e.target.value,
-    });
-  };
-
-  const handleAuthorChange = (e) => {
-    setForm({
-      ...form,
-      inputAuthor: e.target.value,
     });
   };
 
@@ -41,15 +33,13 @@ const Form = () => {
     const newBook = {
       item_id: generateRandomId(),
       title: form.inputTitle,
-      /* author: form.inputAuthor,
-      (since the API doesn't allow other keys, I had to comment this for future use)
-      */
       category: form.selectedText,
     };
     dispatch(postBook(newBook));
   };
   return (
     <form onSubmit={(e) => submitBookToStore(e)} className="book-form" required>
+      <hr className="separator" />
       <label htmlFor="book">
         ADD NEW BOOK
         <br />
@@ -62,14 +52,6 @@ const Form = () => {
           required
         />
       </label>
-      <input
-        type="text"
-        id="author"
-        placeholder="Book author"
-        value={form.inputAuthor}
-        onChange={handleAuthorChange}
-        required
-      />
       <select
         value={form.selectedValue}
         onChange={handleSelectChange}

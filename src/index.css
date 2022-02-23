@@ -1,8 +1,9 @@
 :root {
-  --lightest-color: #252422;
+  --darkest-color: #252422;
+  --dark-color: #403d39;
   --light-color: #ccc5b9;
   --color: #fffcf2;
-  --dark-color: #eb5e28;
+  --accent-color: #eb5e28;
 }
 
 *,
@@ -20,12 +21,12 @@
 }
 
 .active {
-  color: var(--dark-color);
+  color: var(--accent-color);
 }
 
 .btn {
   border-radius: 3px;
-  background-color: var(--dark-color);
+  background-color: var(--accent-color);
   color: var(--color);
   padding: 0.801rem 1.188rem 0.886rem 1.375rem;
 }
@@ -40,7 +41,7 @@
 
 #root {
   height: 100vh;
-  background-color: var(--lightest-color);
+  background-color: var(--darkest-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,6 +49,8 @@
 }
 
 .app {
+  width: 85vw;
+  height: 85vh;
   border-radius: 4px;
   background-color: var(--color);
 }
@@ -66,7 +69,7 @@
 }
 
 .title {
-  color: var(--dark-color);
+  color: var(--accent-color);
 }
 
 .navigation-links {
@@ -80,7 +83,11 @@
 }
 
 .book-form {
-  margin: 2rem;
+  margin: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  align-items: flex-end;
 }
 
 .book-update * {
@@ -93,27 +100,31 @@
 }
 
 .navigation-links *:hover {
-  color: var(--dark-color);
+  color: var(--accent-color);
 }
 
 input {
   background-color: var(--light-color);
   padding: 0.6rem;
   margin: 1rem 0.5rem 0 0;
-  width: 25vw;
+  width: 50vw;
   border-radius: 0.7rem;
 }
 
 #categories {
   background-color: var(--light-color);
-  padding: 0.6rem;
-  margin-right: 0.5rem;
+  padding: 0.65rem;
   border-radius: 0.7rem;
+  margin: 0 1rem;
 }
 
 .books-section {
-  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
   overflow-y: scroll;
+  background-color: var(--dark-color);
 }
 
 .book-card {
@@ -122,6 +133,8 @@ input {
   background-color: var(--light-color);
   padding: 1rem;
   border: 2px solid #5c4b50;
+  width: 90%;
+  margin: 0.5rem;
 }
 
 .book-card:not(:first-child) {
@@ -144,7 +157,6 @@ input {
 }
 
 .book-author {
-  /* color:  */
   font-weight: normal;
 }
 
@@ -153,8 +165,6 @@ input {
   margin-top: 1rem;
   width: 12.5rem;
   justify-content: space-between;
-
-  /* color:  */
 }
 
 .book-events li:nth-child(2) {
@@ -171,4 +181,11 @@ input {
 
 .book-update {
   justify-self: end;
+}
+
+.separator {
+  grid-column: 1 / span 3;
+  width: 100%;
+  border: 1px solid var(--accent-color);
+  margin-bottom: 1rem;
 }
