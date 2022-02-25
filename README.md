@@ -2,9 +2,11 @@
 
 # Bookstore
 
-> "Bookstore" is a website you can (in construction).
+> "Bookstore" is a website you can add and remove books.
 
-With "Bookstore" you (in construction).
+With "Bookstore" and it's API, the books are stored for everybody and ready for later use.
+
+![screenshot](https://i.ibb.co/p2sXpkS/preview.png)
 
 ## Live Server
 
