@@ -6,7 +6,7 @@
 
 With "Bookstore" and it's API, the books are stored for everybody and ready for later use.
 
-![screenshot](https://i.ibb.co/p2sXpkS/preview.png)
+![screenshot](https://i.ibb.co/mth8tZL/preview-1.png)
 
 ## Live Server
 
